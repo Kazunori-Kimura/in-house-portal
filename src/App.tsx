@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import Enquete from './pages/Enquete';
+import Information from './pages/Information';
+import Suggestion from './pages/Suggestion';
+import Task from './pages/Task';
+import Transfer from './pages/Transfer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+    return (
+        <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/info" element={<Information />} />
+            <Route path="/enquete" element={<Enquete />} />
+            <Route path="/suggestion" element={<Suggestion />} />
+            <Route path="/task" element={<Task />} />
+            <Route path="/transfer" element={<Transfer />} />
+        </Routes>
+    );
+};
 
 export default App;
