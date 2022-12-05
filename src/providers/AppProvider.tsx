@@ -1,4 +1,5 @@
 import { createTheme, ThemeProvider } from '@mui/material';
+import { red } from '@mui/material/colors';
 import { ReactNode } from 'react';
 import { HashRouter } from 'react-router-dom';
 
@@ -6,7 +7,11 @@ interface Props {
     children: ReactNode;
 }
 
-const theme = createTheme();
+const theme = createTheme({
+    palette: {
+        primary: red,
+    },
+});
 
 const AppProvider: React.FC<Props> = ({ children }) => {
     return (
